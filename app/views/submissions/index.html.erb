@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "hn.css" %>
+
 <h1>Welcome to SlackerNews!</h1>
 
 <p><%= link_to 'New submission', new_submission_path %></p>
@@ -10,10 +12,11 @@
       <td> <%= link_to '^', submission_path(submission), method: :patch %></td>
       <td>
         <a href = <%= submission.link %>>
-          <%= submission.title %></td>
-        </a>
+          <%= submission.title %>
+        </a></td>
+      <td><%= "By " + submission.user %>
       <td><%= link_to submission.comments.length.to_s + ' comments', submission_path(submission) %></td>
-      <td><%= link_to 'Destroy', submission_path(submission),
+      <td class="mod"><%= link_to 'delete', submission_path(submission),
                     method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>

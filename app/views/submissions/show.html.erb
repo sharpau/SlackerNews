@@ -1,6 +1,13 @@
-<p>
+<%= stylesheet_link_tag "hn.css" %>
+<h1>
   <strong>Title:</strong>
   <%= @submission.title %>
+</h1>
+
+<p>
+  <em>
+    <%= "By " + @submission.user %>
+  </em>
 </p>
 
 <p>

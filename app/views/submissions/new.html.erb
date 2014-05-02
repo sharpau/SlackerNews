@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "hn.css" %>
 <h1>New Submission</h1>
 <%= form_for :submission, url: submissions_path do |f| %>
   <% if @submission.errors.any? %>
@@ -12,7 +13,11 @@
     </div>
   <% end %>
 
-
+  <p>
+    <%= f.label :user %><br>
+    <%= f.text_field :user %>
+  </p>
+  
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>

@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
     @comment = @submission.comments.find(params[:id])
     @comment.destroy
     redirect_to submission_path(@submission)
+  end
   
   private
   def comment_params

@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "hn.css" %>
 <p>
   <strong>Commenter:</strong>
   <%= comment.commenter %>
@@ -8,8 +9,8 @@
   <%= comment.body %>
 </p>
 
-<p>
-  <%= link_to 'Destroy Comment', [comment.submission, comment],
+<p class="mod">
+  <%= link_to 'delete', [comment.submission, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
 </p>
