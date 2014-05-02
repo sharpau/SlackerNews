@@ -1,5 +1,13 @@
+html {
+  background-color: white;
+}
+
 body {
   background-color: #e5e5e5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 h1 {
