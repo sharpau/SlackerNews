@@ -1,0 +1,22 @@
+<p>
+  <strong>Title:</strong>
+  <%= @submission.title %>
+</p>
+
+<p>
+  <em>
+    <%= @submission.votes %>  votes
+  </em>
+</p>
+
+<p>
+  <strong>URL:</strong>
+  <%= @submission.link %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @submission.text %>
+</p>
+
+<%= link_to 'Back', submissions_path %>
