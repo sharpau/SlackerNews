@@ -1,12 +1,18 @@
 class SubmissionsController < ApplicationController
+  http_basic_authenticate_with name: "admin", password: "admin", only: :destroy
+
   def new
+    @submission = Submission.new
   end
   
   def create
     @submission = Submission.new(submission_params)
     
-    @submission.save
-    redirect_to @submission
+    if @submission.save
+      redirect_to @submission
+    else
+      render 'new'
+    end
   end
   
   def show
@@ -15,6 +21,20 @@ class SubmissionsController < ApplicationController
   
   def index
     @submissions = Submission.all
+  end
+  
+  def destroy
+    @submission = Submission.find(params[:id])
+    @submission.destroy
+    
+    redirect_to submissions_path
+  end
+  
+  def update
+    @submission = Submission.find(params[:id])
+    @submission.votes += 1
+    
+    redirect_to submissions_path
   end
   
   private

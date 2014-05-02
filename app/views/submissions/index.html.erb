@@ -1,20 +1,19 @@
 <h1>Welcome to SlackerNews!</h1>
 
-<%= link_to 'New submission', new_submission_path %>
- 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
- 
+<p><%= link_to 'New submission', new_submission_path %></p>
+
+<table> 
   <% @submissions.each do |submission| %>
     <tr>
+      <td> <%= submission.votes %> </td>
+      <td> <%= link_to '^', submission_path(submission), method: :update %></td>
       <td>
         <a href = <%= submission.link %>>
           <%= submission.title %></td>
         </a>
-      <td><%= submission.text %></td>
+      <td><%= link_to submission.comments.length.to_s + ' comments', submission_path(submission) %></td>
+      <td><%= link_to 'Destroy', submission_path(submission),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

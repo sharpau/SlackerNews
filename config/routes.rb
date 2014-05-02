@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :submissions
+  resources :submissions do
+    resources :comments
+  end
   root 'submissions#index'
   #SlackerNews::Application.routes.draw do
 	#	resources :submissions do

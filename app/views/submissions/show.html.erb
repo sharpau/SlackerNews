@@ -19,4 +19,10 @@
   <%= @submission.text %>
 </p>
 
+<h2>Comments</h2>
+<%= render @submission.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
 <%= link_to 'Back', submissions_path %>
