@@ -5,6 +5,7 @@
 
 <p>
   <em>
+    <%= link_to '^', submission_path(@submission), method: :patch %>
     <%= @submission.votes %>  votes
   </em>
 </p>

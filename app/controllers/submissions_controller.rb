@@ -33,6 +33,7 @@ class SubmissionsController < ApplicationController
   def update
     @submission = Submission.find(params[:id])
     @submission.votes += 1
+    @submission.save
     
     redirect_to submissions_path
   end

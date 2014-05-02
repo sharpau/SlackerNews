@@ -2,13 +2,9 @@ Rails.application.routes.draw do
   resources :submissions do
     resources :comments
   end
+  
   root 'submissions#index'
-  #SlackerNews::Application.routes.draw do
-	#	resources :submissions do
-  #    resources :comments
-  #  end
-	#	root 'submissions#index'
-	#end
+    
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

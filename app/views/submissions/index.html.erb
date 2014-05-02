@@ -3,10 +3,11 @@
 <p><%= link_to 'New submission', new_submission_path %></p>
 
 <table> 
-  <% @submissions.each do |submission| %>
+  <% sorted = @submissions.sort do |a,b| b.votes <=> a.votes end %>
+  <% sorted.each do |submission| %>
     <tr>
       <td> <%= submission.votes %> </td>
-      <td> <%= link_to '^', submission_path(submission), method: :update %></td>
+      <td> <%= link_to '^', submission_path(submission), method: :patch %></td>
       <td>
         <a href = <%= submission.link %>>
           <%= submission.title %></td>
